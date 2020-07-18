@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="masthead" style="background-image:url('assets/img/home-bg.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <div class="site-heading">
+                    <h1> Blog</h1><span class="subheading">A sample Blog Page Django</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    {% for post in object_list %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8">
+                    <div class="post-preview">
+                        <a href="{% url 'post_detail' post.pk %}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h3 class="post-subtitle">{{ post.body }}</h3>
+                        </a>
+                        <p class="post-meta">Posted by {{ post.author }}<a href="#"> Start Bootstrap on September 24, 2018</a></p>
+                    </div>
+                    <hr>
+                    <div class="clearfix"><button class="btn btn-primary float-right" type="button">Older Posts&nbsp;⇒</button></div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
