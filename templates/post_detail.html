@@ -21,7 +21,13 @@
                 <p>{{ post.body }}</p>
             </div>
         </div>
+        <div class="row">
+            <div class="clearfix"><a class="btn btn-primary float-right m-3" href="{% url 'post_delete' post.pk%}">Delete Post⇒</a></div>
+            <div class="clearfix"><a class="btn btn-primary float-right m-3" href="{% url 'post_edit' post.pk%}">Edit Post⇒</a></div>
+
+        </div>
     </div>
 </article>
+
 
 {% endblock content %}

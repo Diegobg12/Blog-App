@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="masthead" style="background-image:url('assets/img/post-bg.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <div class="post-heading">
+                    <h1>Delete  Post</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form action="" method="POST">{% csrf_token %} <p>Are you sure you want to delete "{{ post.title }}" post?</p> <input type="submit" value="Confirm"></form>
+{% endblock content %}
