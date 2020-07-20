@@ -14,5 +14,9 @@
     </div>
 </header>
 
-<form action="" method="POST">{% csrf_token %} {{ form.as_p }} <input type="submit" value="Update"></form>
+<div class="container">
+    <div class="row">
+        <form action="" method="POST">{% csrf_token %} {{ form.as_p }} <input type="submit" value="Update"></form>
+    </div>
+</div>
 {% endblock content %}
