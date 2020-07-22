@@ -8,12 +8,16 @@
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto">
                 <div class="site-heading">
-                    <h1> Blog</h1><span class="subheading">A sample Blog Page Django</span></div>
+                    <h1> StoryTeller</h1><span class="subheading">Book Reviews</span></div>
             </div>
         </div>
     </div>
 </header>
 
+<div class="container">
+                    <h2 class="post-title text-center">REVIEWS</h2>
+            <hr>
+</div>
 
     {% for post in object_list %}
 
@@ -22,16 +26,19 @@
                 <div class="col-md-10 col-lg-8">
                     <div class="post-preview">
                         <a href="{% url 'post_detail' post.pk %}">
-                            <h2 class="post-title">{{ post.title }}</h2>
-                            <h3 class="post-subtitle">{{ post.body }}</h3>
+                            <h2 class="post-title">{{ post.title }}  {{ post.stars}}x<i class="fa fa-star"></i></h2>
+                            <h3 class="post-subtitle">{{ post.summary }}</h3>
                         </a>
-                        <p class="post-meta">Posted by {{ post.author }}<a href="#"> Start Bootstrap on September 24, 2018</a></p>
+                        <p class="post-meta">Posted by {{ post.author }}<a href="#"> Created {{ post.pub_date }}</a></p>
                     </div>
                     <hr>
                 </div>
             </div>
         </div>
         {% endfor %}
-        <div class="clearfix"><button class="btn btn-primary float-right" type="button">Older Posts&nbsp;⇒</button></div>
+
+
+
+
 
 {% endblock content %}

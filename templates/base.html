@@ -11,12 +11,14 @@
     </head>
     <body>
         <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand" href="index.html">Django</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="container"><a class="navbar-brand" href="{% url 'home' %}">STORYTELLER</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
                 <div
                     class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'post_new' %}">New Post</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+
                         {% if user.is_authenticated %}
                         <li class="nav-item" role="presentation"><a class="nav-link" href="">{{ user.username }}</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'logout' %}">Log Out</a></li>
@@ -38,9 +40,10 @@
                     <ul class="list-inline text-center">
                         <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></li>
                         <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></li>
+                        <a href="https://github.com/Diegobg12"> <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></li> </a>
+                        
                     </ul>
-                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Brand 2020</p>
+                    <p class="text-muted copyright">Diego Bustos 🦅 2020</p>
                 </div>
             </div>
         </div>
